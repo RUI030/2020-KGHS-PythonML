@@ -2,8 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as plt_font
 from IPython import display
-#twfont1 = plt_font.FontProperties(fname="/content/drive/My Drive/20200522_MLClass/python/font/GenJyuuGothic-Normal.ttf")
-
 
 def regression_function_num(x,beta):
   ans=0
@@ -89,16 +87,12 @@ for i in range(times):
   loss_record.append(loss_function(arr_x,arr_y,beta))
   
 #draw
-#setting
 plt.figure(figsize=(8,8),dpi=100)
 plt.title("Regression Equation",fontsize=20,color="#888888") 
 plt.xlabel("x axis",fontsize=20,color="#cccccc") 
 plt.ylabel("y axis",fontsize=20,color="#cccccc")
 plt.tick_params(axis='x',colors='#cccccc')
 plt.tick_params(axis='y',colors='#cccccc') 
-#plt.xlim(0,250)
-#plt.ylim(0,250)
-
 #draw regression equation
 x = np.linspace(0,1,10000)
 y = regression_function(x,beta)
@@ -106,12 +100,9 @@ plt.plot(x,y,color='STEELBLUE')
 #draw data(dot)
 plt.plot(arr_x,arr_y,"o",color="ORANGE")
 plt.plot(check_x_norm,check_y,"o",color="teal")
-
 plt.show()
-
 #print
-print(beta,loss_function(arr_x,arr_y,beta))
-
+#print(beta,loss_function(arr_x,arr_y,beta))
 #draw loss funtion
 plt.figure(figsize=(8,8),dpi=100)
 plt.title("Loss Function",fontproperties=twfont1,fontsize=20,color="#888888") 
