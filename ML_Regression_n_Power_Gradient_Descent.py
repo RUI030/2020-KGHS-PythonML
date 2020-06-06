@@ -1,7 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as plt_font
-from IPython import display
 
 def regression_function_num(x, beta):
   ans = 0
