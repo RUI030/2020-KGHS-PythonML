@@ -73,7 +73,6 @@ power=2
 times=20000
 beta=np.random.random(size=(power+1))
 eta=np.full(len(beta),(10**-2))
-par_beta=beta
 #record initialize
 loss_record=[]
 
@@ -89,8 +88,8 @@ for i in range(times):
 #draw
 plt.figure(figsize=(8,8),dpi=100)
 plt.title("Regression Equation",fontsize=20,color="#888888") 
-plt.xlabel("x axis",fontsize=20,color="#cccccc") 
-plt.ylabel("y axis",fontsize=20,color="#cccccc")
+plt.xlabel("x axis",fontsize=14,color="#cccccc") 
+plt.ylabel("y axis",fontsize=14,color="#cccccc")
 plt.tick_params(axis='x',colors='#cccccc')
 plt.tick_params(axis='y',colors='#cccccc') 
 #draw regression equation
@@ -105,9 +104,9 @@ plt.show()
 #print(beta,loss_function(arr_x,arr_y,beta))
 #draw loss funtion
 plt.figure(figsize=(8,8),dpi=100)
-plt.title("Loss Function",fontproperties=twfont1,fontsize=20,color="#888888") 
-plt.xlabel("x axis",fontsize=20,color="#cccccc") 
-plt.ylabel("y axis",fontsize=20,color="#cccccc")
+plt.title("Loss Function",fontsize=20,color="#888888") 
+plt.xlabel("Training Times",fontsize=14,color="#cccccc") 
+plt.ylabel("Loss",fontsize=14,color="#cccccc")
 plt.tick_params(axis='x',colors='#cccccc')
 plt.tick_params(axis='y',colors='#cccccc') 
 for i in range(0,len(loss_record),int(len(loss_record)/100)):
