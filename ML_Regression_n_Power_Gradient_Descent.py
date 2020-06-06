@@ -41,6 +41,7 @@ def normalize(data):
 #輸入原始資料
 list_x = [8,-10,13,-16,23,-30,-34,45,-50,53,-57,62,-66,69,-75,81,-88,92,-2,5]
 list_y = [5.7,8.8,18,21,30,42,80,130,200,263,248,327,367,433,486,515,756,818,0.6,1]
+
 #將原始資料轉成陣列並分割為訓練資料與測試資料
 data_x_raw = np.array(list_x)
 data_y_raw = np.array(list_y)
@@ -66,8 +67,8 @@ check_x_norm = data_x_norm[divide:]
 check_y_norm = data_y_norm[divide:]
 
 #設定
-power = 2    #回歸函數次方
-times = 20000    #訓練次數
+power = 3    #回歸函數次方
+times = 10000    #訓練次數
 
 #初始化
 beta = np.random.random(size = (power + 1))    #回歸函數係數的隨機陣列
@@ -118,14 +119,14 @@ for i in range(len(beta)):
       print(' - ', -beta[i],'x^',i,sep='',end='')
   else:
     print(beta[i],sep='',end='')
-
 #使用matplotlib畫出Loss function值隨訓練次數變化的情形
+dot_num = 50  #要描的點的數量，不能超過loss record長度
 plt.figure(figsize=(8,8), dpi=100)
 plt.title("Loss Function", fontsize=20, color="#888888") 
 plt.xlabel("Training Times", fontsize=14, color="#cccccc") 
 plt.ylabel("Loss", fontsize=14, color="#cccccc")
 plt.tick_params(axis='x', colors='#cccccc')
 plt.tick_params(axis='y', colors='#cccccc') 
-for i in range(0, len(loss_record), int(len(loss_record) / 100)):
-  plt.plot(loss_record, ':o', color='MEDIUMVIOLETRED')
+for i in range(0, len(loss_record), int(len(loss_record) / dot_num)):
+  plt.plot(i,loss_record[i], '.', color='MEDIUMVIOLETRED')
 plt.show()
