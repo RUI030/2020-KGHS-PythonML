@@ -18,7 +18,8 @@ def regression_function(arr_x, beta):
   return np.array(LIST)
 #損失函數
 def loss_function(arr_x, arr_y, beta):
-  e_2 = (arr_y - regression_function(arr_x, beta))**2
+  e_2 = arr_y - regression_function(arr_x, beta)
+  e_2 =e_2**2
   return 0.5 * (np.sum(e_2))
 #將回歸函數係數偏微分的函式
 def par_beta_function(arr_x, arr_y, beta):
